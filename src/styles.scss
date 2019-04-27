@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~swiper/dist/css/swiper.min.css';
+
+body {
+  background: url(assets/image/background-image.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}

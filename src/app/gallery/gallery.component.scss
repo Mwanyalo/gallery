@@ -1,44 +1,68 @@
 .container {
   padding-left: 20px;
   padding-right: 20px;
-  margin: 2rem auto; 
+  margin: 75px auto 2px auto ; 
 }
 
 .gallery {
-  margin: 0 70px;
+  flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1px;
 }
 
-img {
-  max-width: 100%; 
-}
-
-.grid-item {
-  margin-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  float: left;
+.grid-item img {
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  border: 10px solid #ffffff;
   max-width: 100%;
-  margin: 5px;
+  height: 300px;
+  display: block;
+  object-fit: contain;
+  margin: auto;
+	transition: transform 400ms ease-out;
 }
 
-@media only screen and (min-width: 992px){
-  // .gallery {
-  //   max-width: 1360px;
-  // }
-  // .grid-item {
-  //   width: 25%;
-  // }
+.grid-item img:hover {
+	transform: scale(1.05);
 }
 
-@media only screen and (min-width: 480px) {
-  // .gallery{
-  //     max-width: 680px;
-  // }
-//   .grid-item {
-//     padding-left: 10px;
-//     padding-right: 10px;
-//     width: 50%;
+.pagination{
+  clear: both;
+  float: left;
+  width: 100%;
+  margin: 30px 0px 10px;
+  padding: 0px;
+}
+
+.pagination {
+  background-color: rgba(255,255,255, 0.8);
+  width: 100%;
+  height: 60px; 
+}
+.pagination a {
+  color: rgba(15, 0, 0, 0.8);
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 600;
+  padding: 6px 15px 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+  margin: 10px;
+  float: right;
+  position: relative;
+}
+
+/* Bigger than Phones(tablet) */
+// @media only screen and (min-width: 750px) {
+//   .gallery {
+//    grid-template-columns: repeat(2, 1fr);
 //   }
-}
+// }
+
+/* Bigger than Phones(laptop / desktop) */
+// @media only screen and (min-width: 970px) {
+//   .gallery {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }

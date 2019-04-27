@@ -1,17 +1,21 @@
 <div class="container">
-    <div class="gallery">
 
-      <div class="grid-item" *ngFor="let photo of photos">
-        <figure class="effect-bubba">
-          <img src="{{photo.urls.thumb}}">
-          <figcaption>
-            <h2 class="tm-figure-title">Image <span>One</span></h2>
-            <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="img/tm-img-01.jpg">View more</a>
-          </figcaption>
-        </figure>
-      </div>
-
+  <div class="gallery">
+    <div class="grid-item" *ngFor="let photo of photos; let i = index">
+      <figure (click)="openPhoto(i)">
+        <img src="{{photo?.urls.thumb}}">
+        <figcaption>
+          <h2 class="tm-figure-title">{{photo?.user?.first_name}}</h2>
+        </figcaption>
+      </figure>
     </div>
+  </div>
 
+</div>
+
+<div class="pagination">
+  <div>
+    <a (click)="nextPage()">Next</a>
+    <a (click)="previousPage()">Prev</a>
+  </div>
 </div>
