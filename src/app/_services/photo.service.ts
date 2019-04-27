@@ -12,7 +12,6 @@ export class PhotoService {
 
   getPhotos(pageNumber) {
     const url = `${appConfig.apiUrl}${appConfig.client_id}&page=${pageNumber}`;
-    console.log('url', url);
     return this.http.get<any>(url);
   }
 

@@ -2,8 +2,7 @@
 
   <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
     <div>
-      <a routerLink="/page/{{ pageNumber }}">All photos</a>
-      <a (click)="downloadPhoto()">Download photo</a>
+      <a class="anchorLinks" routerLink="/page/{{ pageNumber }}">All photos</a>
     </div>
   </div>
 
@@ -11,18 +10,16 @@
 
     <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
       <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [index]='index'
-        [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)"
-        (swiperTransitionStart)="onSwiperEvent('transitionStart')"
-        (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+        [config]="config" [disabled]="disabled">
         <div *ngFor="let slide of slides" class="swiper-slide">
-          <div class="user-name">{{slide.user.first_name}}</div>
+          <span class="user-name">{{slide.user.first_name}}</span>
+          <span style="float:right" class="anchorLinks"><a (click)="downloadPhoto(slide)">Download photo</a></span>
           <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
             <img class="gallery-photo" src="{{slide.urls.regular}}">
           </div>
         </div>
       </swiper>
     </div>
-
 
   </div>
 

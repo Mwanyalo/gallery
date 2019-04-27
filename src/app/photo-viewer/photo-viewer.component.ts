@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { SwiperComponent, SwiperDirective, SwiperConfigInterface,
-  SwiperScrollbarInterface, SwiperPaginationInterface, SwiperAutoplayInterface } from 'ngx-swiper-wrapper';
-import { PhotoService } from '../_services/photo.service';
+import { SwiperComponent, SwiperDirective, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { Router, ActivatedRoute } from '@angular/router';
+import {saveAs} from 'file-saver';
+
+import { PhotoService } from '../_services/photo.service';
 
 @Component({
   selector: 'app-photo-viewer',
@@ -19,10 +19,6 @@ export class PhotoViewerComponent implements OnInit {
   public pageNumber: number;
   public index: any;
 
-  // private autoplay: SwiperAutoplayInterface = {
-  //   delay: 4000
-  // };
-
   public config: SwiperConfigInterface = {
     a11y: true,
     direction: 'horizontal',
@@ -32,7 +28,6 @@ export class PhotoViewerComponent implements OnInit {
     scrollbar: false,
     navigation: true,
     pagination: false,
-    // autoplay: this.autoplay,
     observer: true
   };
 
@@ -42,7 +37,6 @@ export class PhotoViewerComponent implements OnInit {
   constructor(public photoService: PhotoService, private router: Router, private route: ActivatedRoute) {
     this.pageNumber = +this.route.snapshot.paramMap.get('id');
     this.index = this.route.snapshot.queryParamMap.get('index');
-    console.log('index', this.route.snapshot.queryParamMap.get('index'));
   }
 
   ngOnInit() {
@@ -51,16 +45,12 @@ export class PhotoViewerComponent implements OnInit {
     });
   }
 
-  public onIndexChange(index: number): void {
-    // console.log('Swiper index: ', index);
+  downloadPhoto(image) {
+    const imageId = image.id;
+    const fileName = image.user.first_name;
+    this.photoService.getDownloadPhoto(imageId).subscribe(
+      (res) => {
+        saveAs(res.url, fileName);
+    });
   }
-
-  public onSwiperEvent(event: string): void {
-    // console.log('Swiper event: ', event);
-  }
-
-  downloadPhoto() {
-
-  }
-
 }

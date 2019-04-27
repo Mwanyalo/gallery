@@ -14,7 +14,7 @@
 .grid-item img {
   box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
   border: 10px solid #ffffff;
-  max-width: 100%;
+  max-width: auto;
   height: 300px;
   display: block;
   object-fit: contain;
@@ -53,16 +53,30 @@
   position: relative;
 }
 
-/* Bigger than Phones(tablet) */
-// @media only screen and (min-width: 750px) {
-//   .gallery {
-//    grid-template-columns: repeat(2, 1fr);
-//   }
-// }
 
-/* Bigger than Phones(laptop / desktop) */
-// @media only screen and (min-width: 970px) {
-//   .gallery {
-//     grid-template-columns: repeat(4, 1fr);
-//   }
-// }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+   }
+
+   .pagination a {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 8px;
+   }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+   }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+   }
+} 
