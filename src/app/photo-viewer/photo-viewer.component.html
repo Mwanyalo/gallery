@@ -12,11 +12,11 @@
       <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [index]='index'
         [config]="config" [disabled]="disabled">
         <div *ngFor="let slide of slides" class="swiper-slide">
-          <span class="user-name">{{slide.user.first_name}}</span>
-          <span style="float:right" class="anchorLinks"><a (click)="downloadPhoto(slide)">Download photo</a></span>
-          <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+          <div class="row" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
             <img class="gallery-photo" src="{{slide.urls.regular}}">
           </div>
+                    <span class="user-name">{{slide.user.first_name}}</span>
+          <span style="float:right" class="anchorLinks"><a (click)="downloadPhoto(slide)">Download photo</a></span>
         </div>
       </swiper>
     </div>
