@@ -2,12 +2,12 @@
 
   <div class="gallery">
     <div class="grid-item" *ngFor="let photo of photos; let i = index">
-      <figure (click)="openPhoto(i)">
+      <div (click)="openPhoto(i)">
         <img src="{{photo?.urls.thumb}}">
         <figcaption>
           <h2 class="tm-figure-title">{{photo?.user?.first_name}}</h2>
         </figcaption>
-      </figure>
+      </div>
     </div>
   </div>
 
