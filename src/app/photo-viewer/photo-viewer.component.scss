@@ -35,6 +35,7 @@
   max-height: 530px;
   display: block;
   object-fit: contain;
+  padding-top: 5px;
   margin: 0 auto;
 }
 
@@ -43,6 +44,10 @@
   padding: 5px;
   float: left;
   margin: 8px 0 0 10px;
+}
+
+.nav-back .anchorLinks {
+  margin-left: 10px;
 }
 
 .anchorLinks {
@@ -64,27 +69,30 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+  .content-container{
+    height: 500px
+  }
   .box-container {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 80%;
+    max-width: 100%;
     max-height: 100%;
-    padding: 24px;
-    margin: 80px auto 24px auto;
+    padding: 15px 5px;
+    margin: 80px auto 1px auto;
   }
   
-  .content-container {
-    height: 100%;
-    min-height: 100%;
-    margin: 6px 12px;
+  .gallery-photo {
+    position: absolute;
+    top: 53%;
+    transform: translateY(-50%);
+    max-width: 100%;
   }
+
+  .user-name {
+    font-size: 20px;
+    padding: 4px;
+  }
+
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
 
-}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}

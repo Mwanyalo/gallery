@@ -18,6 +18,7 @@ export class PhotoViewerComponent implements OnInit {
   public disabled = false;
   public pageNumber: number;
   public index: any;
+  private loading = true;
 
   public config: SwiperConfigInterface = {
     a11y: true,
@@ -42,6 +43,9 @@ export class PhotoViewerComponent implements OnInit {
   ngOnInit() {
     this.photoService.getPhotos(this.pageNumber).subscribe(data => {
       this.slides = data;
+      this.loading = false;
+    }, error => {
+      this.loading = false;
     });
   }
 

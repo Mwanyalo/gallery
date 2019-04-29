@@ -12,6 +12,7 @@ export class GalleryComponent implements OnInit {
   public photos: Array<any> = [];
   fileUrl;
   public pageNumber: number;
+  private loading = true;
 
   constructor(
     public photoService: PhotoService,
@@ -28,6 +29,9 @@ export class GalleryComponent implements OnInit {
   loadPhotos() {
     this.photoService.getPhotos(this.pageNumber).subscribe(data => {
       this.photos = data;
+      this.loading = false;
+    }, error => {
+      this.loading = false;
     });
   }
 

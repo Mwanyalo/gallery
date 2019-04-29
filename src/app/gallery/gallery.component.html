@@ -1,12 +1,27 @@
 <div class="container">
 
+  <div *ngIf="loading" class="wrapper">
+    <div class="overlay">
+      <div class="spinner-wrapper">
+        <p>Loading</p>
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="gallery">
     <div class="grid-item" *ngFor="let photo of photos; let i = index">
       <div (click)="openPhoto(i)">
         <img src="{{photo?.urls.thumb}}">
-        <figcaption>
-          <h2 class="tm-figure-title">{{photo?.user?.first_name}}</h2>
-        </figcaption>
+        <div>
+          <h2 class="photo-title">{{photo?.user?.first_name}}</h2>
+        </div>
       </div>
     </div>
   </div>

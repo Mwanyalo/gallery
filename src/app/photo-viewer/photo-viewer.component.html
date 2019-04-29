@@ -1,7 +1,21 @@
-<div class="box-container" fxLayout="column">
+<div *ngIf="loading" class="wrapper">
+    <div class="overlay">
+      <div class="spinner-wrapper">
+        <p>Loading</p>
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+</div>  
 
+<div *ngIf="loading == false" class="box-container" fxLayout="column">
   <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
-    <div>
+    <div class="nav-back">
       <a class="anchorLinks" routerLink="/page/{{ pageNumber }}">All photos</a>
     </div>
   </div>
