@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhotoViewerComponent } from './photo-viewer.component';
 
-describe('PhotoViewerComponent', () => {
+xdescribe('PhotoViewerComponent', () => {
   let component: PhotoViewerComponent;
   let fixture: ComponentFixture<PhotoViewerComponent>;
 

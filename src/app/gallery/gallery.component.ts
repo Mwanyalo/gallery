@@ -35,28 +35,28 @@ export class GalleryComponent implements OnInit {
     });
   }
 
-  openPhoto(i: any) {
-    this.router.navigate([`page/${this.pageNumber}/fullview`], {queryParams: {index: i}});
-  }
+  // openPhoto(i: any) {
+  //   this.router.navigate([`page/${this.pageNumber}/fullview`], {queryParams: {index: i}});
+  // }
 
-  previousPage() {
-    if (this.pageNumber > 1) {
-      this.pageNumber = (this.pageNumber - 1);
-      this.loadPhotos();
-      this.router.navigate([`page/${this.pageNumber - 1}`]);
-    } else {
-        console.log('You are in the first page');
-    }
-  }
+  // previousPage() {
+  //   if (this.pageNumber > 1) {
+  //     this.pageNumber = (this.pageNumber - 1);
+  //     this.loadPhotos();
+  //     this.router.navigate([`page/${this.pageNumber - 1}`]);
+  //   } else {
+  //       console.log('You are in the first page');
+  //   }
+  // }
 
-  nextPage() {
-    if (this.pageNumber >= 1) {
-      this.pageNumber = (this.pageNumber + 1);
-      this.loadPhotos();
-      this.router.navigate([`page/${this.pageNumber + 1}`]);
-    } else {
-        console.log('You are in the last page');
-    }
-  }
+  // nextPage() {
+  //   if (this.pageNumber >= 1) {
+  //     this.pageNumber = (this.pageNumber + 1);
+  //     this.loadPhotos();
+  //     this.router.navigate([`page/${this.pageNumber + 1}`]);
+  //   } else {
+  //       console.log('You are in the last page');
+  //   }
+  // }
 
 }
